@@ -1,0 +1,23 @@
+@mixin transition($time) {
+  -webkit-transition: $time ease-in-out;
+  -moz-transition: $time ease-in-out;
+  -ms-transition: $time  ease-in-out;
+  -o-transition: $time ease-in-out;
+  transition: $time ease-in-out;
+}
+
+@mixin shadow($param) {
+  -webkit-box-shadow: $param ;
+  -moz-box-shadow: $param;
+  box-shadow: $param;
+}
+
+@mixin rotate($deg) {
+  transform: rotate($deg);
+}
+
+@mixin radius($param) {
+  -webkit-border-radius: $param;
+  -moz-border-radius: $param;
+  border-radius: $param;
+}

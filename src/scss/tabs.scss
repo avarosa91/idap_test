@@ -1,0 +1,192 @@
+.tabs {
+  &__header {
+    display: flex;
+    align-items: center;
+    background-color: $light-grey;
+    border-bottom: 1px solid $border-grey;
+
+    li {
+      position: relative;
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      padding: 0 60px 0 30px;
+      height: 70px;
+      cursor: pointer;
+      border-right: 1px solid $border-grey;
+      @include transition(.2s);
+
+      &:first-child {
+        .notify {
+          background-color: $medium-grey;
+        }
+      }
+
+      &:hover {
+        @include transition(.2s);
+        background-color: lighten($light-grey, 5%);
+      }
+
+      img {
+        vertical-align: middle;
+        margin-right: 15px;
+      }
+
+      .notify {
+        top: 10px;
+        right: 30px;
+      }
+    }
+
+    .active {
+      background-color: $white;
+      border-bottom: transparent;
+    }
+
+    .describe {
+      cursor: auto;
+      color: $border-grey;
+      flex-grow: 3;
+      flex-direction: row-reverse;
+      border-right: none;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    padding: 30px;
+    section {
+      width: 100%;
+      display: none;
+      .projects {
+        width: 100%;
+        border: 1px solid $border-grey;
+        @include radius(4px);
+        .header {
+          position: relative;
+          display: flex;
+          padding: 20px 30px;
+          border-bottom: 1px solid $light-grey;
+          input {
+            outline: none;
+            width: 100%;
+            font-size: 18px;
+            border: 0;
+          }
+          .drop {
+            white-space: nowrap;
+            padding: 5px 20px;
+            background-color: transparent;
+            border: 1px solid $border-grey;
+            i {
+              margin-left: 10px;
+            }
+          }
+          .dropdown-list {
+            position: absolute;
+            top: 57px;
+            right: 98px;
+            width: 160px;
+          }
+          .round {
+            padding: 10px 15px;
+            margin-left: 15px;
+            i {
+              font-weight: bold;
+            }
+          }
+        }
+        .projects-list {
+          .project {
+            .options {
+              display: flex;
+              align-items: center;
+              border-bottom: 1px solid $light-grey;
+              padding: 10px 30px;
+              .label {
+                font-family: $font-mon;
+                background-color: $red;
+                font-size: 18px;
+                padding: 5px 10px;
+                color: $white;
+                @include radius(4px);
+              }
+              p {
+                font-size: 18px;
+                margin-left: 15px;
+                flex-grow: 3;
+              }
+              .theme {
+                text-transform: uppercase;
+                border: 1px solid $border-grey;
+                padding: 8px 15px;
+                @include radius(50px);
+              }
+              .round {
+                margin-left: 15px;
+                background-color: transparent;
+                border: 1px solid $border-grey;
+                color: $medium-grey;
+                padding: 7px 10px;
+                @include transition(.2s);
+                &:hover {
+                  background-color: $red;
+                  color: $white;
+                  border: 1px solid transparent;
+                  @include transition(.2s);
+                }
+              }
+              .accordion {
+                margin-left: 15px;
+                background-color: transparent;
+                cursor: pointer;
+                padding: 5px 11px 2px;
+                border: 1px solid $border-grey;
+                color: $medium-grey;
+                width: 33px;
+                height: 33px;
+                outline: none;
+                font-size: 18px;
+                @include transition(.2s);
+                i {
+                  @include transition(.2s);
+                }
+                &:hover {
+                  @include transition(.2s);
+                  background-color: $red;
+                  border: 1px solid transparent;
+                  color: $white;
+                }
+              }
+              .active-accordion {
+                background-color: $red;
+                border: 1px solid transparent;
+                color: $white;
+                i {
+                  @include rotate(180deg);
+                  @include transition(.2s);
+                }
+              }
+            }
+            .panel {
+              border-bottom: 1px solid $light-grey;
+              padding: 0 30px;
+              background-color: $white-grey;
+              height: 0;
+              overflow: hidden;
+              transition: height .2s ease-out;
+            }
+          }
+        }
+      }
+    }
+    .active {
+      width: 100%;
+      display: flex;
+    }
+  }
+}

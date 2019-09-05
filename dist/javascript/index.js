@@ -37,7 +37,7 @@ var tabsGenerator = function tabsGenerator(wrapEl) {
   var onTabsChange = function onTabsChange(e) {
     e.preventDefault();
 
-    var target = e.target.dataset.tabId;
+    var target = e.target.dataset.tabId || e.target.parentElement.dataset.tabId;
     clearContent();
 
     tabs[target - 1].classList.add(ACTIVE_CLASS);
@@ -86,15 +86,11 @@ var dropdownGenerator = function dropdownGenerator(el) {
  */
 var accordion = document.getElementsByClassName('accordion');
 
-// console.log(panel);
-
-
 for (var i = 0; i < accordion.length; i++) {
   accordion[i].addEventListener('click', function () {
     this.classList.toggle('active-accordion');
     var container = this.closest('.project');
     var panel = container.querySelector('.panel');
-    console.log(panel);
     if (panel.style.height) {
       panel.style.height = null;
     } else {

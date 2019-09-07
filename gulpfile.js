@@ -6,7 +6,7 @@ const gulp = require('gulp'),
     babel = require('gulp-babel');
 
 gulp.task('js', function() {
-    gulp.src(['src/js/index.js'])
+    gulp.src(['src/js/*.js'])
         .pipe(babel({presets: ['es2015']}))
         .pipe(gulp.dest('dist/javascript/'))
 });
